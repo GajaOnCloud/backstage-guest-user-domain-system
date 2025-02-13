@@ -1,4 +1,4 @@
-apiVersion: backstag.io/v1alpha1
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: shopping-cart
@@ -6,3 +6,11 @@ spec:
   type: website
   lifecycle: production
   owner: guests
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ecommerce
+spec:
+  type: team
+  children: []

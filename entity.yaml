@@ -27,6 +27,8 @@ spec:
   lifecycle: production
   owner: user:gaja
   system: purchasing
+  consumesApis:
+    - auth-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component

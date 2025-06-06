@@ -1,3 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: shopping-cart
+spec:
+  type: website
+  lifecycle: production
+  owner: guests
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ecommerce
+spec:
+  type: team
+  children: []
 # apiVersion: backstage.io/v1alpha1
 # kind: Domain
 # metadata:
@@ -16,17 +32,17 @@
 #   owner: ecommerce
 #   domain: shopping-app
 # ---
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: shopping-cart
-spec:
-  # dependsOn:
-  #   - component:inventory
-  type: website
-  lifecycle: production
-  # owner: user:john
-  owner: guests
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: shopping-cart
+# spec:
+#   # dependsOn:
+#   #   - component:inventory
+#   type: website
+#   lifecycle: production
+#   # owner: user:john
+#   owner: guests
   # system: purchasing
   # consumesApis:
   #   - auth-api
@@ -52,14 +68,14 @@ spec:
 #   type: database
 #   owner: ecommerce
 #   system: purchasing
----
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
-  name: ecommerce
-spec:
-  type: team
-  children: []
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Group
+# metadata:
+#   name: ecommerce
+# spec:
+#   type: team
+#   children: []
 # ---
 # apiVersion: backstage.io/v1alpha1
 # kind: User

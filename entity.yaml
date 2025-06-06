@@ -1,56 +1,57 @@
-apiVersion: backstage.io/v1alpha1
-kind: Domain
-metadata:
-  name: shopping-app
-  description: Handles everything in the ecommerce portion of the business
-spec:
-  owner: ecommerce
-  # subdomainOf: audio-domain
----
-apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: purchasing
-  description: system for managing user purchases
-spec:
-  owner: ecommerce
-  domain: shopping-app
----
+# apiVersion: backstage.io/v1alpha1
+# kind: Domain
+# metadata:
+#   name: shopping-app
+#   description: Handles everything in the ecommerce portion of the business
+# spec:
+#   owner: ecommerce
+#   # subdomainOf: audio-domain
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: System
+# metadata:
+#   name: purchasing
+#   description: system for managing user purchases
+# spec:
+#   owner: ecommerce
+#   domain: shopping-app
+# ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: shopping-cart
 spec:
-  dependsOn:
-    - component:inventory
+  # dependsOn:
+  #   - component:inventory
   type: website
   lifecycle: production
-  owner: user:john
-  system: purchasing
-  consumesApis:
-    - auth-api
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: inventory
-spec:
-  dependsOn:
-    - resource:inventory-db
-  type: service
-  lifecycle: production
-  owner: ecommerce
-  system: purchasing
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: inventory-db
-  description: Stores inventory details
-spec:
-  type: database
-  owner: ecommerce
-  system: purchasing
+  # owner: user:john
+  # owner: guests
+  # system: purchasing
+  # consumesApis:
+  #   - auth-api
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: inventory
+# spec:
+#   dependsOn:
+#     - resource:inventory-db
+#   type: service
+#   lifecycle: production
+#   owner: ecommerce
+#   system: purchasing
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Resource
+# metadata:
+#   name: inventory-db
+#   description: Stores inventory details
+# spec:
+#   type: database
+#   owner: ecommerce
+#   system: purchasing
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
@@ -59,10 +60,10 @@ metadata:
 spec:
   type: team
   children: []
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: john
-spec:
-  memberOf: [ecommerce]
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: User
+# metadata:
+#   name: john
+# spec:
+#   memberOf: [ecommerce]
